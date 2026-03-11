@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment variables (future APIs)
+.env
+
+# Temporary files
+*.tmp
+*.temp
