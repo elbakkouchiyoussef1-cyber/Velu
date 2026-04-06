@@ -1,0 +1,299 @@
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── TOKENS ── */
+:root {
+  --cream: #faf6f1;
+  --blush: #e8c9b8;
+  --rose: #c2816a;
+  --deep: #2b1f1a;
+  --muted: #9a7d72;
+  --white: #ffffff;
+  --border: rgba(194, 129, 106, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  background: var(--cream);
+  color: var(--deep);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 60px;
+  background: rgba(250, 246, 241, 0.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo img {
+  width: clamp(100px, 20vw, 120px);
+  height: auto;
+  display: block;
+}
+
+/*
+.nav-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}*/
+
+.nav-back {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-back:hover {
+  color: var(--rose);
+}
+
+/* ── MAIN LAYOUT ── */
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 120px 60px 120px;
+}
+
+/* ── PAGE HEADER ── */
+.legal-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.legal-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--deep);
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.legal-title em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+/* ── CONTENT BLOCKS ── */
+.legal-section {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legal-section h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--deep);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.legal-section h3 {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 10px;
+  margin-top: 28px;
+}
+
+.legal-section h3:first-child {
+  margin-top: 0;
+}
+
+.legal-section p {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.legal-section p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section a {
+  color: var(--rose);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+
+.legal-section a:hover {
+  border-bottom-color: var(--rose);
+}
+
+.legal-section ul {
+  list-style: none;
+  margin: 14px 0;
+}
+
+.legal-section ul li {
+  padding-left: 18px;
+  position: relative;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.legal-section ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--rose);
+  font-size: 11px;
+}
+
+.legal-info-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.legal-info-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+  min-width: 110px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.legal-info-value {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep);
+  padding: 36px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+  opacity: 0.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-links a {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 241, 0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-links a.active {
+  color: var(--blush);
+}
+
+.footer-copy {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(250, 246, 241, 0.3);
+}
+
+/* ── ANIMATION ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 24px;
+  }
+  main {
+    padding: 100px 24px 80px;
+  }
+  footer {
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-info-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .legal-info-label {
+    min-width: unset;
+  }
+}
